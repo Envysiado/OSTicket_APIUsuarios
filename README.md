@@ -1,49 +1,55 @@
-# OSTicket_APIUsuarios
-Servidor Web: Compatible con PHP (Apache/Nginx).
-PHP: Versión 7.2 o superior. Verifica con:
-bash
-Copiar código
-php -v
-Extensiones PHP:
+# API para Creación de Usuarios en osTicket
+
+Este proyecto implementa una API para la creación de usuarios en osTicket sin la necesidad de confirmación por correo electrónico.
+
+## Pre-requisitos 📋
+
+Asegúrate de contar con los siguientes requisitos antes de comenzar:
+
+- **Servidor Web**: Apache o Nginx compatible con PHP.
+- **PHP**: Versión 7.2 o superior. Verifica tu versión ejecutando:
+  ```bash
+  php -v
+
+## Extensiones de PHP:
 mysqli
 curl
 mbstring
 xml
 json
-Base de Datos MySQL: Configura MySQL o MariaDB, crea una base de datos para osTicket.
-osTicket: Descarga la última versión desde osTicket.
-Configuración de osTicket: Ajusta el archivo config.php con los datos de tu base de datos.
-Acceso a Internet: Asegúrate de que tu servidor pueda descargar dependencias.
+
+Base de Datos MySQL: Configura una instancia de MySQL o MariaDB y crea una base de datos para osTicket.
+osTicket: Descarga la última versión desde osTicket y configúralo.
+Acceso a Internet: Asegúrate de que el servidor pueda descargar dependencias.
 Instalación 🔧
-Archivos a modificar:
+Sigue los pasos para configurar la API de creación de usuarios:
+
+## Modifica los archivos necesarios:
 
 Edita upload/api/http.php.
-Crea upload/include/api.users.php.
-Configura osTicket:
+Crea el archivo upload/include/api.users.php.
+Configura la API en osTicket:
 
-Inicia sesión como agente.
-Ve a Admin Panel > Manage > API.
-Crea una API key:
-Añade la IP de tu aplicación.
-Marca las casillas para permitir JSON, XML y EMAIL.
-Guarda la API key para usarla en los headers o como parámetro.
-Llamadas a la API
-Haz un POST a la URL:
+Inicia sesión como agente en osTicket.
+Ve al panel de administración (Admin Panel).
+Navega a Manage > API.
+Crea una nueva API Key:
+Añade la IP donde está alojada tu aplicación.
+Marca las opciones para permitir JSON, XML y EMAIL.
+Guarda la API Key, ya que la necesitarás en los headers o como parámetro de la API.
+Uso de la API
+Realiza un POST a las siguientes URLs según el formato que necesites:
 
 JSON: http://tu-dominio/osticket/upload/api/users.json
 XML: http://tu-dominio/osticket/upload/api/users.xml
 EMAIL: http://tu-dominio/osticket/upload/api/users.email
-Ejemplo de datos (JSON):
 
-json
-Copiar código
+## Ejemplo de solicitud JSON:
 {
-  "email": "usuario@ejemplo.com",
-  "full_name": "Nombre Usuario",
-  "phone": "123456789",
-  "timezone": "America/Los_Angeles",
-  "password": "contraseña123",
-  "confirm_password": "contraseña123"
+    "email": "lalo@mendez.com",
+    "full_name": "Eduardo Mendez",
+    "phone": "123456789X686",
+    "timezone": "America/Los_Angeles",
+    "password": "1234",
+    "confirm_password": "1234"
 }
-Pruebas
-Usa una aplicación como Postman o un entorno de desarrollo configurado para realizar pruebas.
