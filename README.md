@@ -2,7 +2,7 @@
 
 Este proyecto implementa una API para la creación de usuarios en osTicket sin la necesidad de confirmación por correo electrónico.
 
-## Pre-requisitos 📋
+## Requisitos 📋
 
 Asegúrate de contar con los siguientes requisitos antes de comenzar:
 
