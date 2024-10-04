@@ -46,10 +46,17 @@ EMAIL: http://tu-dominio/osticket/upload/api/users.email
 
 ## Ejemplo de solicitud JSON:
 {
+
     "email": "lalo@mendez.com",
+    
     "full_name": "Eduardo Mendez",
+    
     "phone": "123456789X686",
+    
     "timezone": "America/Los_Angeles",
+    
     "password": "1234",
+    
+    
     "confirm_password": "1234"
 }
